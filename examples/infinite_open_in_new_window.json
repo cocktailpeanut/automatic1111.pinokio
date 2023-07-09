@@ -2,7 +2,7 @@
   "prompt": "a Maneki-neko in the middle of a desert",
   "run": [
     {
-      "uri": "https://github.com/malfunctionize/auto.git/index.js",
+      "uri": "../index.js",
       "method": "run",
       "params": {
         "cfg_scale": 7,
