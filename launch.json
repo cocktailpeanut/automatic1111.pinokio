@@ -1,0 +1,9 @@
+{
+  "run": [{
+    "method": "browser",
+    "params": {
+      "method": "open",
+      "params": ["http://127.0.0.1:7860", "_blank"]
+    }
+  }]
+}

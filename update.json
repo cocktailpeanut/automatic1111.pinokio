@@ -1,0 +1,16 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": {
+      "message": "git pull",
+      "path": "automatic1111"
+    }
+  }, {
+    "method": "notify",
+    "params": {
+      "html": "Update successful. Click to visit the terminal and restart",
+      "href": "start.json",
+      "type": "success"
+    }
+  }]
+}

@@ -1,0 +1,54 @@
+{
+  "run": [
+    {
+      "method": "input",
+      "params": {
+        "title": "Enter a prompt",
+        "form": [{
+          "key": "prompt",
+          "description": "enter a prompt to generate an image"
+        }]
+      }
+    },
+    {
+      "uri": "../index.js",
+      "method": "run",
+      "params": {
+        "cfg_scale": 7,
+        "steps": 30,
+        "prompt": "{{input.prompt}}"
+      },
+      "queue": true
+    },
+    {
+      "method": "set",
+      "params": {
+        "local": {
+          "path": "../images/{{Date.now()}}.png",
+          "image": "{{Buffer.from(input.images[0], 'base64')}}"
+        }
+      }
+    },
+    {
+      "method": "fs.write",
+      "params": {
+        "path": "{{local.path}}",
+        "buffer": "{{local.image}}"
+      }
+    },
+    {
+      "method": "notify",
+      "params": {
+        "html": "<img src='{{local.path}}?raw=true'>",
+        "href": "{{local.path}}",
+        "target": "viewer"
+      }
+    },
+    {
+      "method": "goto",
+      "params": {
+        "index": 0
+      }
+    }
+  ]
+}

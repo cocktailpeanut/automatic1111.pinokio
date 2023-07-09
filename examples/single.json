@@ -1,0 +1,39 @@
+{
+  "prompt": "a shrimp monster",
+  "run": [
+    {
+      "uri": "../index.js",
+      "method": "run",
+      "params": {
+        "cfg_scale": 7,
+        "steps": 30,
+        "prompt": "{{self.prompt}}"
+      },
+      "queue": true
+    },
+    {
+      "method": "set",
+      "params": {
+        "local": {
+          "path": "../images/{{Date.now()}}.png",
+          "image": "{{Buffer.from(input.images[0], 'base64')}}"
+        }
+      }
+    },
+    {
+      "method": "fs.write",
+      "params": {
+        "path": "{{local.path}}",
+        "buffer": "{{local.image}}"
+      }
+    },
+    {
+      "method": "browser.open",
+      "params": {
+        "uri": "{{local.path}}",
+        "target": "new",
+        "features": "self"
+      }
+    }
+  ]
+}

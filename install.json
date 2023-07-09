@@ -1,0 +1,23 @@
+{
+  "run": [{
+    "uri": "./index.js",
+    "method": "install"
+  }, {
+    "method": "notify",
+    "params": {
+      "html": "<p><i class='fa-solid fa-arrow-up-right-from-square'></i> Open Automatic1111 StableDiffusion Web UI at {{input}}</p>",
+      "href": "{{input}}",
+      "target": "_blank"
+    }
+  }, {
+    "method": "notify",
+    "params": {
+      "html": "<p><i class='fa-solid fa-arrow-up-right-from-square'></i> Try running example scripts</p>",
+      "href": "examples",
+      "target": "_blank",
+      "features": "self"
+    }
+  }, {
+    "method": "process.wait"
+  }]
+}
