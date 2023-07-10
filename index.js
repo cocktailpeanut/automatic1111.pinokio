@@ -61,7 +61,7 @@ class Automatic1111 {
       await fs.promises.writeFile(path.resolve(__dirname, "automatic1111", "webui-user.sh"), newtext)
     }
     let r = await this.start(req, ondata, kernel)
-    return r
+    return r.response
   }
   async start(req, ondata, kernel) {
     await this.init(kernel)
