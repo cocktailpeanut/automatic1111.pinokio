@@ -14,7 +14,7 @@ First time launching? Install first: [install](install.json)
 
 ### Mac
 
-[Update COMMANDLINE_ARGS](automatic1111/webui-macos-env.sh#L13)
+[Update COMMANDLINE_ARGS](automatic1111/webui-user.sh#L13)
 
 
 ## Examples
