@@ -35,7 +35,7 @@ module.exports = {
       }, {
         html: '<i class="fa-solid fa-gear"></i> Configure',
         type: "link",
-        htref: (os.platform() === 'win32' ? "automatic1111/webui-user.bat#L6" : "automatic1111/webui-user.sh#L13")
+        href: (os.platform() === 'win32' ? "automatic1111/webui-user.bat#L6" : "automatic1111/webui-user.sh#L13")
       }]
     } else {
       return [{
